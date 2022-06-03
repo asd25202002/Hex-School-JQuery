@@ -101,30 +101,30 @@ body h5{
     text-align: center;
 }
 .topbar li a{
-    display: block;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 .topbar li a img{
-    float: left;
     margin-right: 5px;
 }
-.topbar a img,.topbar a span{
-    float: left;
+.topbar span{
     font-weight: bold;
 }
 .facebook{
     padding-right: 8px;
     border-right: 2px solid #cbcbcb;
 }
-.facebook a span{
+.facebook span{
     color: #495b88;
 }
-.twitter a span{
+.twitter span{
     color: #41b1f4;
 }
-.facebook a span:hover{
+.facebook span:hover{
     -webkit-text-stroke: 1px #5c74ab;
 }
-.twitter a span:hover{
+.twitter span:hover{
     -webkit-text-stroke: 1px #62c8f0;
 }
 /* header */
@@ -202,11 +202,6 @@ body h5{
 .dropdown > li > a:hover{
     color: #fff;
 }
-/* swiper */
-.swiper {
-    width: 1024px;
-    height: 560px;
-}
 /* content */
 .content{
     margin-top: 60px;
@@ -229,7 +224,7 @@ body h5{
     box-shadow: 0 1px 0 3px #dbdbdb;
     cursor: pointer;
 }
-.course > li > a > img{
+.example-image-link img{
     width: 130px;
     height: 115px;
 }
@@ -237,13 +232,15 @@ body h5{
     margin-top: 20px;
     margin-bottom: 10px;
 }
-.course > li > p,.jquery-info > li{
+.course p,.jquery-info li{
     line-height: 1.5;
     text-align: justify;
 }
-.jquery-info > li::before{
-    content: '▪';
-    padding: 5px;
+.jquery-info{
+    margin-left: 2em;
+}
+.jquery-info li{
+    list-style-type: square;
 }
 /* lightbox */
 #lightbox{
@@ -253,7 +250,7 @@ body h5{
 .compare{
     margin-top: 50px;
 }
-.compare > h4{
+.compare h4{
     text-align: center;
 }
 /* vs */
@@ -270,11 +267,11 @@ body h5{
     cursor: pointer;
     color: #fff;
 }
-.vs tr td,.vs tr th{
+.vs td,.vs th{
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.vs tr th{
+.vs th{
     font-weight: bold;
 }
 /* contact */
@@ -295,11 +292,11 @@ body h5{
     justify-content: space-around;
     margin-top: 20px;
 }
-.join textarea,.join div input{
+.join textarea,.join input{
     border: 3px solid transparent;
     outline: none;
 }
-.join textarea:focus,.join div input:focus{
+.join textarea:focus,.join input:focus{
     border: 3px solid #00cc99;
 }
 .join textarea{
@@ -308,10 +305,10 @@ body h5{
     height: 245px;
     font-size: 17px;
 }
-.join div label{
+.join label{
     color: #fff;
 }
-.join div input{
+.join input{
     display: block;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -319,7 +316,7 @@ body h5{
     width: 460px;
     font-size: 17px;
 }
-.join div input[type="submit"]{
+.join input[type="submit"]{
     float: right;
     padding: 10px 5px;
     border: 1px solid #00cc99;
@@ -328,9 +325,12 @@ body h5{
     width: 70px;
     color: #fff;
 }
-.join div input[type="submit"]:hover{
+.join input[type="submit"]:hover{
     opacity: .5;
     cursor: pointer;
+}
+.clear{
+    clear: both;
 }
 /* footer */
 .footer{
@@ -351,18 +351,20 @@ body h5{
     overflow: hidden;
 }
 /* call */
-.call span{
-    display: block;
+.call li{
     padding-top: 2.5px;
     padding-bottom: 2.5px;
 }
-.call span a{
+.call a{
     position: relative;
     text-decoration: none;
     color: #e75799;
     font-weight: bold;
 }
-.call span a::after{
+.call a:hover{
+    color: red;
+}
+.call a::after{
     content: "";
     position: absolute;
     left: 0;
@@ -371,8 +373,7 @@ body h5{
     border-bottom: 2px solid transparent;
     transition: .5s;
 }
-.call span a:hover::after{
+.call a:hover::after{
     border-bottom: 2px solid red;
     width: 100%;
-    color: red;
 }
